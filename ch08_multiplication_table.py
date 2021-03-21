@@ -3,7 +3,8 @@
 #Date: 2021/03/21
 #Description: These codes I modified from Professor's document and translate to English to do
 # -	Check duplication random number for multiplication
-# -	Update the limit time about 45 second, if user answered the product is over limit time, program will set wrong answer.
+# -	Update the limit time about 45 second, if user answered the product is over limit time,
+#   program will set wrong answer.
 import random #랜덤 모듈을 가져옴-#Import random module
 import time#시간 관련 모듈을 가져옴-Import time-related modules
 
