@@ -10,7 +10,8 @@ import time#시간 관련 모듈을 가져옴-Import time-related modules
 
 correctAns=0 #맞은 개수 -Right count
 wrongAns=0#틀린 개수-Wrong count
-duplicateList=[]#a list to check duplicate random number
+duplicateListA=[]#a list to check duplicate random number (for number a
+duplicateListB=[]#a list to check duplicate random number (for number b)
 limitTime=45#45 second, if user answers over limitTime, the result is refused
 count=int(input("몇번할까요?"))#How many times should I do?
 while count!=0:
@@ -18,11 +19,16 @@ while count!=0:
     b=random.randint(3,9)
     if a==5 or b==5: #5단이면 다시 난수 발생-If it is 5th stage, random number is generated again
         continue
-    duplicateProduct=a*b#get multiplication value
-    if duplicateList.__contains__(duplicateProduct):#if the multiplication value was already asked
+    isDuplicated=False
+    for i in range(len(duplicateListA)):#loop to check duplicate random number
+        if duplicateListA[i]==a and duplicateListB[i]==b:
+            isDuplicated=True
+            break
+    if isDuplicated == True:#if the multiplication value was already asked
         continue#"Computer duplicated random number, it will random again! "
     else:
-        duplicateList.append(duplicateProduct)
+        duplicateListA.append(a)
+        duplicateListB.append(b)
     count=count-1
     print("%d X %d?" %(a,b))
     startTime=time.time() #반응 시간을 측정-#Measure reaction time
