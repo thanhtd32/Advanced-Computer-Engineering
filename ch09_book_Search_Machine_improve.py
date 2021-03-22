@@ -34,19 +34,23 @@ while True:#Book input/search
     5. 종료(End)
     선택(1,2,3,4,5):''')
     if choice=='1':#book input
-        book=dict()
-        title=input("제목(title)>>")
-        author=input("저자명(Author's name)>>")
-        publisher = input("출판사(Publisher)>>")
-        price = input("가격(price)>>")
-        year = input("출판년도(Publication year)>>")
-        book["제목"]=title
-        book["저자"] = author
-        book["출판사"] = publisher
-        book["가격"] = price
-        book["출판년도"] = year
-        mybooks.append(book)
-        print("Enter a new book successfully!")
+        while True:
+            book=dict()
+            title=input("제목(title)>>")
+            author=input("저자명(Author's name)>>")
+            publisher = input("출판사(Publisher)>>")
+            price = input("가격(price)>>")
+            year = input("출판년도(Publication year)>>")
+            book["제목"]=title
+            book["저자"] = author
+            book["출판사"] = publisher
+            book["가격"] = price
+            book["출판년도"] = year
+            mybooks.append(book)
+            print("Enter a new book successfully!")
+            continueEnterBook=input("Do you want to continue enter new book or not(Y/N)?>>")
+            if continueEnterBook=='N' or continueEnterBook=='n':
+                break
     elif choice=='2' : #도서명
         kwd="제목"
     elif choice=='3':#저자명
@@ -64,7 +68,8 @@ while True:#Book input/search
         print("-"*40)
         for onebook in mybooks:
             if userin==onebook[kwd]:
-                print(onebook["제목"],"\t",onebook["저자"],"\t",onebook["출판사"],"\t",onebook["가격"],"\t",onebook["출판년도"])
+                print(onebook["제목"],"\t",onebook["저자"],"\t",onebook["출판사"],"\t",
+                      onebook["가격"],"\t",onebook["출판년도"])
                 find=True
         print("-" * 40)
         if find==False:
