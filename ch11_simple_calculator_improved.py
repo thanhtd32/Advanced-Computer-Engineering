@@ -55,7 +55,7 @@ while True:
                     else:#Illegal operation command (divided by zero)!!)
                         print("잘못된 작업 명령(0으로 나누기)!!)")
                 else:
-                    print("Operand is not exist![=,+,-,*,/,%,^]")
+                    print("Operator is not exist![=,+,-,*,/,%,^]")
             else:
                 print("Some operand is not valid!")
     else:
