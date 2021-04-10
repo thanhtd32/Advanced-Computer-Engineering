@@ -4,7 +4,7 @@
 #Description:
     #These codes I improved from Professor's document and translate to English to.
     #1.List all Toiec Score for each Student acquired: Score-Frequency- Frequency rate
-    #2.List all Score with range comple for Student acquired: Base Score-Frequency- Frequency rate
+    #2.List all Score with range complex for Student acquired: Base Score-Frequency- Frequency rate
     #3.See all the scores with the same max frequency.
     #4.See all the scores with the same min frequency.
     #5.A function to find the average of the TOEIC students acquired.
@@ -84,7 +84,6 @@ def printAllMaxFrequency():
     for baseScore in list_scoreBase:
         print(baseScore, "\t", maxFrequency, "\t\t", rate, "%")
 
-
 #this function use to find a min value in an array
 def findMinValue(counters):
     min = findMaxValue(counters)
@@ -92,6 +91,7 @@ def findMinValue(counters):
         if i!=0 and i<min:
             min=i
     return min
+
 #this function get all min frequency that the same value
 def min_frequency_all(toiecScores):
     counters = frequency(toiecScores)
