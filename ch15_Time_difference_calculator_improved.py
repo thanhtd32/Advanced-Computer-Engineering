@@ -50,7 +50,9 @@ def printCountries(countries,isSmall=True):
             print(f'{i+1}.{countries[i]:<20}',end="")
         else:
             print(f'{i + 1}.{countries[i]:<50}', end="")
-        if (i+1) % 3 ==0:
+        if isSmall and (i+1) % 3 ==0:
+            print()
+        elif isSmall==False and ((i+1) % 4) ==0:
             print()
     print()
 #this function use to show the current date for country by index
