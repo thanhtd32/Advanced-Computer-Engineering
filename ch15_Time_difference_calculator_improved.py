@@ -1,8 +1,12 @@
 #Author: Tran Duy Thanh
 #Email: thanhtd@uel.edu.vn
-#Date: 2021/04/17
+#Date: 2021/04/18
 #Description:
     #These codes I improved from Professor's document and translate to English to.
+    #1.calculate the time difference for each country by saving the time difference of
+    #       different countries in a list and selecting a country
+    #2.save all country over the world into Excel to calculate the time difference for each country
+    #3.Make a menu for user choosing
 import datetime
 import pandas as pd
 #some default country and jetlag
