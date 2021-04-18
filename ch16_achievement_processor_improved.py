@@ -93,7 +93,7 @@ while True:#loop to test student
                 foundObj=stObj
                 break
         if foundObj==None:
-            print("Can not find student name [%s]",name)
+            print("Can not find student name ",name)
         else:
             foundObj.printInforWithTitle()
     elif choose =="4":
