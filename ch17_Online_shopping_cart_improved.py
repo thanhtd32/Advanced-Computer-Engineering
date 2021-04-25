@@ -59,19 +59,25 @@ class Basket:
                   f'{self.quantity[i]*self.prices[i]:<10}')
         print("-" * 40)
         print("** total = ",self.total, ", noitems= ",self.noitems)
-
+#create a new Basket object
 cjBasket =Basket("John")
+#call add function
 cjBasket.add("banana",5000,2)
+#call add function
 cjBasket.add("milk",2000,3)
+#call add function
 cjBasket.add("apple",3000,1)
+#call print items function
 cjBasket.printitems()
-
+#call add function with the same item (banana already input)
 cjBasket.add("banana",5000,3)
+#call print items function
 cjBasket.printitems()
-
+#call add function with the same item (apple already input)
 cjBasket.add("apple",3000,3)
+#call print items function
 cjBasket.printitems()
-
+#test delete function:
 if cjBasket.delete("milk",1)==True:
     print("delete 1 quanlity of milk is successful")
     cjBasket.printitems()
