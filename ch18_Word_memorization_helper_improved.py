@@ -144,9 +144,15 @@ class VocabularyExecutor:
                             print("Wrong! '"+meaning+"' has meaning '"+word+"'")#"The correct answer is'"+word+"'"
             print("You finihsed a periodic learning")
             # Words unmemorized:
-            print("Words unmemorized:", self.voc.untrained)
+            if len(self.voc.untrained) > 0:
+                print("Words unmemorized:", self.voc.untrained)
+            else:
+                print("Words unmemorized:0")
             #words memoried
-            print("Words memorized:", self.voc.memorized)
+            if len(self.voc.memorized)>0:
+                print("Words memorized:", self.voc.memorized)
+            else:
+                print("Words memorized:0")
             #update the unmemorized word
             self.voc.updateUnmemorized()
             #save status progressing learning to file
