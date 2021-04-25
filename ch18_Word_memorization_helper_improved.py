@@ -31,6 +31,7 @@ class Vocabulary:
         self.untrained=set(self.words)
         self.unmemorized=self.untrained.copy()
         self.memorized=set()#variable save to correct vocabulary for each periodic
+
     #this function to get sample 5 vocabulary in the unmemorized list
     def takeVocabularyToLearn(self):
         #difference unmemorized and memorized
@@ -41,8 +42,11 @@ class Vocabulary:
         random.shuffle(self.target)
         self.memorized = set()#reset correct vocabulary for feach periodic
         self.untrained = set()  # empty set
+
+    #this function use to difference operator to get the unmemorized vocabulary
     def updateUnmemorized(self):
         self.unmemorized = self.unmemorized - self.memorized
+
     def target_keys(self):
         return self.target
 
@@ -65,6 +69,7 @@ class Vocabulary:
 
     def shuffle(self):
         random.shuffle(self.target)
+
     #this static method used to build vocabulary database from Excel
     @staticmethod
     def buildVocabularyDatabase():
@@ -77,6 +82,7 @@ class Vocabulary:
             wdict[korean] = english
         voc = Vocabulary(wdict)
         return voc
+
     #this function use to print all orginial vocabularies
     def printAllVocabularies(self):
         print("There are ", len(self.words), " vocabularies")
@@ -85,15 +91,16 @@ class Vocabulary:
         for k, v in self.words.items():
             print(f'{v:<20}{k:<20}')
         print("-" * 40)
+
+    #this function use to print all status progressing learning
     def printStatusProgressingLearning(self):
         print("There are ", len(self.words), " vocabularies")
         memorizeds=set(self.words)-self.unmemorized
         print("You have not yet memorized ", len(self.unmemorized), " vocabularies")
         print("You already memorized ", len(memorizeds), " vocabularies")
+
 #this class use to parse vocabulary from Excel File
 #and return Vocabulary Object
-
-
 class VocabularyExecutor:
     voc=None
     filename = "vocabulary.dat"
@@ -114,6 +121,7 @@ class VocabularyExecutor:
             elif choose=="4":
                 break
         print("Thank you so much for your using programming!")
+
     #this function: Learner will learn vocabulary
     def learnVocabulary(self):
         #before learning, program will show the status progressing learning
@@ -153,6 +161,7 @@ class VocabularyExecutor:
         else:
             #print status progressing learning again when user paused learning
             self.voc.printStatusProgressingLearning()
+
     #this function use to overview vocabularies
     def overviewVocabulary(self):
         if self.voc is None:
@@ -169,6 +178,7 @@ class VocabularyExecutor:
         except FileNotFoundError:
             self.voc = Vocabulary.buildVocabularyDatabase()
         self.learnVocabulary()
+
     #this function: leaner re learns vocabulary
     #rebuild vocabulary database
     def reLearnVocabulary(self):
@@ -180,6 +190,7 @@ class VocabularyExecutor:
     def persistenceVocabulary(self):
         with open(self.filename, 'wb') as output:  # Overwrites any existing file.
             pickle.dump(self.voc, output, pickle.HIGHEST_PROTOCOL)
+
 #create a VocabularyExecutor object
 vexecutor=VocabularyExecutor()
 #call runVocabularyExecutor to start program
