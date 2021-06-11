@@ -23,7 +23,7 @@ from keras.utils import np_utils
 from keras.datasets import mnist
 import cv2
 
-# 2. Load MNIST Dataset
+# Step 2. Load MNIST Dataset
 #Load data from the MNIST dataset, including 60,000 training sets and 10,000 test sets.
 # Then divide the training set to 2 parts: 50,000 for training set and 10,000 data for validation set.
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
